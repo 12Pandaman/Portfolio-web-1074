@@ -1,0 +1,576 @@
+/* Load Poppins and Roboto for consistent typography across all pages */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap');
+
+/* --- GLOBAL STYLES --- */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #1a1a1a;
+  /* Darker black for better contrast */
+  background-color: #f7f9fc;
+  /* Very light background for modern look */
+  line-height: 1.6;
+  padding: 0;
+  /* Remove body padding, use padding on main/header */
+}
+
+/* Center main content and apply page padding */
+main {
+  max-width: 1000px;
+  /* Limit content width */
+  margin: 0 auto;
+  /* Center content */
+  padding: 50px 30px;
+  /* Add internal padding */
+}
+
+
+/* Headings and brand should use Poppins for a consistent, bold look */
+h1,
+h2,
+h3,
+.brand,
+.project h2,
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* --- HEADER --- */
+.site-header {
+  background: linear-gradient(135deg, #3498db, #2a98d1);
+  color: #fff;
+  padding: 15px 0;
+  /* Vertical padding, horizontal padding is in header-inner */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  /* Keep header visible */
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header .header-inner {
+  max-width: 1000px;
+  /* Match main content width */
+  margin: 0 auto;
+  padding: 0 50px;
+  /* Match main content padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header .brand {
+  font-weight: 800;
+  /* Bolder brand name */
+  font-size: 24px;
+  letter-spacing: 0.8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 15px;
+  border-radius: 25px;
+  /* More rounded links */
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.25)
+}
+
+
+/* --- MAIN CONTENT & HEADINGS --- */
+main h1 {
+  font-size: 80px;
+  /* Very large and bold name */
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* Style for the ID line to make it smaller and distinct */
+main h1 br {
+  display: none;
+  /* Hide HTML line breaks for better control */
+}
+
+/* You may need to slightly adjust the HTML: change ID : 66... to <span class="id-text">ID : 66...</span> */
+main h1 .id-text {
+  display: block;
+  font-size: 32px;
+  /* Smaller font size for ID */
+  font-weight: 700;
+  color: #444;
+  margin-top: 15px;
+}
+
+main h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+main h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 50px;
+  color: #555;
+}
+
+.Faculty,
+.Major {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #696969;
+  text-align: left;
+}
+
+/* --- SKILLS SECTION --- */
+.skills {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.skills h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #000;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 15px;
+  /* Increased gap */
+}
+
+.skill-list li {
+  background: #ffffff;
+  /* White card background */
+  border: 1px solid #e0e6ed;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-list li:hover {
+  box-shadow: 0 8px 18px rgba(52, 152, 219, 0.1);
+  /* Subtle blue shadow on hover */
+  transform: translateY(-2px);
+}
+
+.skill-name {
+  font-weight: 700;
+  /* Bolder skill name */
+  font-size: 17px;
+  color: #2c3e50;
+  /* Dark color for label */
+  margin-right: 15px;
+  width: 260px;
+  /* Adjusted fixed column width */
+  flex-shrink: 0;
+}
+
+.skill-note {
+  font-family: 'Roboto', sans-serif;
+  color: #0a4f78;
+  /* Dark blue text for tag */
+  background: #e6f7ff;
+  /* Light blue background for the tag */
+  border-radius: 50px;
+  /* Fully rounded tag */
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  flex-grow: 1;
+  text-align: center;
+}
+
+
+/* --- BUTTONS --- */
+.btn_next1 {
+  /* Use the existing styles but ensure size is consistent */
+  display: inline-flex;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  padding: 14px 0;
+  /* Use 0 horizontal padding for fixed width */
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin-top: 40px;
+  width: 160px;
+  /* Fixed width */
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_next1:hover {
+  background: linear-gradient(135deg, #2980b9, #1f6391);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn_next1:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+
+  /* Adjustments for medium screens */
+  main h1 {
+    font-size: 56px;
+  }
+
+  main h1 .id-text {
+    font-size: 28px;
+  }
+
+  .skill-list li {
+    display: block;
+    /* Stack skill name and note */
+    align-items: flex-start;
+  }
+
+  .skill-name {
+    width: auto;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 16px;
+  }
+
+  .skill-note {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+  }
+}
+
+@media (max-width: 500px) {
+
+  /* Adjustments for small screens */
+  .site-header .header-inner {
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    padding: 30px 15px;
+  }
+
+  main h1 {
+    font-size: 40px;
+  }
+
+  main h1 .id-text {
+    font-size: 20px;
+  }
+}
+
+
+/* --- Other Page Styles (Retained from original CSS) --- */
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.profile {
+  text-align: center;
+  margin: 20px 0 40px 0;
+}
+
+.profile img {
+
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border: 6px solid #3498db;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #3498db;
+}
+
+.card p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.card a {
+  color: #2980b9;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card p b {
+  display: inline-block;
+  min-width: 90px;
+  font-weight: 700;
+}
+
+.btn-group {
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-list {
+  display: grid;
+  gap: 16px;
+  margin: 18px 0
+}
+
+.project {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06)
+}
+
+.project h2 {
+  margin: 0 0 8px 0
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 600
+}
+
+.project.highlight {
+  background: linear-gradient(180deg, #f0fbff, #e6f7ff);
+  border: 2px solid #cfeefb;
+  box-shadow: 0 8px 20px rgba(11, 111, 181, 0.06);
+}
+
+.project.highlight h2 {
+  color: #0b6fb5;
+}
+
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.link-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.link-list b {
+  min-width: 90px;
+  color: #000000;
+}
+
+.link-list a {
+  color: #2980b9;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link-list a:hover {
+  color: #1f6391;
+  text-decoration: underline;
+}
+
+.btn_back1,
+.btn_next1,
+.btn_next2,
+.btn_next {
+  /* เพิ่ม .btn_next เพื่อให้ใช้สไตล์เดียวกัน */
+  display: inline-flex;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+
+  /* บังคับให้มีขนาดเท่ากัน */
+  box-sizing: border-box;
+  width: 160px;
+  /* เพิ่มความกว้างจากเดิม 140px เป็น 160px ให้ดูดีขึ้น */
+  padding: 14px 0;
+  /* กำหนด padding แนวตั้งเท่านั้น */
+  align-items: center;
+  justify-content: center;
+}
+
+
+.btn_back1:hover,
+.btn_next1:hover,
+.btn_next2:hover,
+.btn_next:hover {
+  background: linear-gradient(135deg, #2980b9, #1f6391);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+
+.btn_back1:active,
+.btn_next1:active,
+.btn_next2:active,
+.btn_next:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 420px) {
+
+  .btn_back1,
+  .btn_next1,
+  .btn_next2,
+  .btn_next {
+    width: auto;
+    padding: 12px 24px;
+  }
+}
+
+
+.project-list {
+  display: grid;
+  gap: 16px;
+  margin: 18px 0
+}
+
+.project {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.project:not(.highlight):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project h2 {
+  margin: 0 0 8px 0
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #1f6391;
+  text-decoration: underline;
+}
+
+.project.highlight {
+  background: linear-gradient(180deg, #f0fbff, #e6f7ff);
+  border: 2px solid #cfeefb;
+  box-shadow: 0 8px 20px rgba(11, 111, 181, 0.06);
+  padding: 18px 16px;
+}
+
+.project.highlight h2 {
+  color: #0b6fb5;
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Image Styling for Game Prototypes */
+.project-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* P tag containing link and image to ensure proper spacing/flow */
+.project p {
+  margin: 10px 0 20px 0;
+}
