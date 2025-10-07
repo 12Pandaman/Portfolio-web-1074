@@ -1,236 +1,211 @@
-/* Load Poppins and Roboto for consistent typography across all pages */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap');
 
-/* --- GLOBAL STYLES --- */
+/* === GLOBAL === */
 body {
   font-family: 'Roboto', sans-serif;
   color: #1a1a1a;
-  /* Darker black for better contrast */
   background-color: #f7f9fc;
-  /* Very light background for modern look */
   line-height: 1.6;
   padding: 0;
-  /* Remove body padding, use padding on main/header */
+  margin: 0;
 }
 
-/* Center main content and apply page padding */
 main {
   max-width: 1000px;
-  /* Limit content width */
   margin: 0 auto;
-  /* Center content */
-  padding: 50px 30px;
-  /* Add internal padding */
+  padding: 60px 30px;
 }
 
-
-/* Headings and brand should use Poppins for a consistent, bold look */
-h1,
-h2,
-h3,
-.brand,
-.project h2,
-.section-title {
-  font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-/* --- HEADER --- */
+/* === HEADER === */
 .site-header {
-  background: linear-gradient(135deg, #3498db, #2a98d1);
+  background: linear-gradient(135deg, #4facfe);
   color: #fff;
-  padding: 15px 0;
-  /* Vertical padding, horizontal padding is in header-inner */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px 0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
   position: sticky;
-  /* Keep header visible */
   top: 0;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .site-header .header-inner {
   max-width: 1000px;
-  /* Match main content width */
   margin: 0 auto;
   padding: 0 50px;
-  /* Match main content padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.site-header .brand {
+.brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
   font-weight: 800;
-  /* Bolder brand name */
-  font-size: 24px;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
 }
 
 .nav-links {
   display: flex;
   gap: 15px;
-  align-items: center;
 }
 
 .nav-link {
   font-family: 'Poppins', sans-serif;
   color: #fff;
   background: rgba(255, 255, 255, 0.15);
-  padding: 8px 15px;
-  border-radius: 25px;
-  /* More rounded links */
+  padding: 8px 18px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.25)
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
-
-/* --- MAIN CONTENT & HEADINGS --- */
-main h1 {
-  font-size: 80px;
-  /* Very large and bold name */
-  font-weight: 700;
-  line-height: 1.1;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  color: #000;
-}
-
-/* Style for the ID line to make it smaller and distinct */
-main h1 br {
-  display: none;
-  /* Hide HTML line breaks for better control */
-}
-
-/* You may need to slightly adjust the HTML: change ID : 66... to <span class="id-text">ID : 66...</span> */
-main h1 .id-text {
-  display: block;
-  font-size: 32px;
-  /* Smaller font size for ID */
-  font-weight: 700;
-  color: #444;
-  margin-top: 15px;
-}
-
-main h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-main h3 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-top: 0;
+/* === NAME SECTION === */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 72px;
+  font-weight: 800;
+  color: #000000;
   margin-bottom: 50px;
-  color: #555;
+  line-height: 1.15;
 }
 
-.Faculty,
-.Major {
-  font-size: 20px;
+.profile-card {
+  width: 100%;              /* เดิมอาจจะ 60% หรือ 70% — เพิ่มให้ใหญ่ขึ้น */
+  max-width: 800px;        /* ปรับจาก 600px → 800px เพื่อให้ขยายได้กว้างขึ้น */
+  padding:60px 100px;      /* เพิ่มพื้นที่ขอบในให้ดูโปร่งขึ้น */
+  background: #fff;
+  border-radius: 20px;     /* มุมโค้งนุ่มขึ้น */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 40px auto; 
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.fullname {
+  font-size: 48px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.nickname {
+ font-size: 22px;
+  color: #666;
+  margin-bottom: 20px;
   font-weight: 600;
-  margin-bottom: 5px;
-  color: #696969;
-  text-align: left;
 }
 
-/* --- SKILLS SECTION --- */
+.nickname span {
+  color: #3498db;
+  font-weight: 700;
+margin-right: 100px;
+}
+
+.university {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.divider {
+  width: 80%;
+  height: 2px;
+  background: #e1e1e1;
+  margin: 25px auto;
+  border-radius: 2px;
+}
+
+.faculty, .major, .student-id {
+  font-size: 20px;
+  font-weight: 700;
+  color: #3498db;
+  margin: 8px 0;
+}
+
+.faculty strong, .major strong, .student-id strong {
+ font-size: 22px;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+
+/* === SKILLS === */
 .skills {
-  margin-top: 60px;
-  padding-top: 30px;
-  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+  padding-top: 5px;
+  border-top: 2px solid #e0e0e0;
 }
 
 .skills h2 {
-  font-size: 32px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
   font-weight: 800;
+  color: #3498db;
   margin-bottom: 25px;
-  color: #000;
 }
 
 .skill-list {
+  display: grid;
+  gap: 18px;
   list-style: none;
   padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 15px;
-  /* Increased gap */
 }
 
 .skill-list li {
-  background: #ffffff;
-  /* White card background */
-  border: 1px solid #e0e6ed;
-  border-radius: 12px;
-  padding: 18px 20px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .skill-list li:hover {
-  box-shadow: 0 8px 18px rgba(52, 152, 219, 0.1);
-  /* Subtle blue shadow on hover */
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(52, 152, 219, 0.12);
 }
 
 .skill-name {
   font-weight: 700;
-  /* Bolder skill name */
   font-size: 17px;
   color: #2c3e50;
-  /* Dark color for label */
-  margin-right: 15px;
-  width: 260px;
-  /* Adjusted fixed column width */
-  flex-shrink: 0;
 }
 
 .skill-note {
-  font-family: 'Roboto', sans-serif;
-  color: #0a4f78;
-  /* Dark blue text for tag */
   background: #e6f7ff;
-  /* Light blue background for the tag */
-  border-radius: 50px;
-  /* Fully rounded tag */
+  color: #0a4f78;
+  font-weight: 600;
+  border-radius: 25px;
   padding: 6px 14px;
-  font-size: 14px;
-  font-weight: 500;
-  flex-grow: 1;
   text-align: center;
 }
 
-
-/* --- BUTTONS --- */
+/* === BUTTONS === */
 .btn_next1 {
-  /* Use the existing styles but ensure size is consistent */
-  display: inline-flex;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: #fff;
   background: linear-gradient(135deg, #3498db, #2980b9);
   padding: 14px 0;
-  /* Use 0 horizontal padding for fixed width */
   border-radius: 50px;
+  width: 160px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  margin-top: 40px;
-  width: 160px;
-  /* Fixed width */
-  align-items: center;
-  justify-content: center;
 }
 
 .btn_next1:hover {
@@ -239,70 +214,35 @@ main h3 {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-.btn_next1:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* --- Responsive Adjustments --- */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-
-  /* Adjustments for medium screens */
-  main h1 {
-    font-size: 56px;
+  h1 {
+    font-size: 52px;
   }
 
-  main h1 .id-text {
-    font-size: 28px;
+  .info-line {
+    gap: 15px;
+  }
+
+  .skills h2 {
+    font-size: 26px;
   }
 
   .skill-list li {
-    display: block;
-    /* Stack skill name and note */
-    align-items: flex-start;
-  }
-
-  .skill-name {
-    width: auto;
-    margin-bottom: 8px;
-    display: block;
-    font-size: 16px;
-  }
-
-  .skill-note {
-    display: inline-block;
-    width: auto;
-    text-align: left;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
 @media (max-width: 500px) {
-
-  /* Adjustments for small screens */
-  .site-header .header-inner {
-    flex-direction: column;
-    gap: 8px;
-    padding: 0 15px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   main {
-    padding: 30px 15px;
+    padding: 30px 20px;
   }
 
-  main h1 {
+  h1 {
     font-size: 40px;
   }
-
-  main h1 .id-text {
-    font-size: 20px;
-  }
 }
-
 
 /* --- Other Page Styles (Retained from original CSS) --- */
 
@@ -353,11 +293,13 @@ main h3 {
   font-weight: 700;
   margin-bottom: 12px;
   color: #3498db;
+    font-family: 'Poppins', sans-serif;
 }
 
 .card p {
   font-size: 16px;
-  margin: 8px 0;
+  margin: 8px 0;  font-family: 'Poppins', sans-serif;
+  margin-left: 10px;
 }
 
 .card a {
@@ -368,12 +310,20 @@ main h3 {
 
 .card a:hover {
   text-decoration: underline;
+  
 }
 
 .card p b {
   display: inline-block;
   min-width: 90px;
   font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+.card a {
+  display: inline-block;
+  min-width: 90px;
+  font-weight: 700;
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-group {
@@ -382,12 +332,20 @@ main h3 {
   display: flex;
   justify-content: center;
   gap: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-list,
+.project,
+.project * {
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .project-list {
   display: grid;
   gap: 16px;
   margin: 18px 0
+
 }
 
 .project {
@@ -395,6 +353,7 @@ main h3 {
   padding: 16px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06)
+  
 }
 
 .project h2 {
@@ -407,6 +366,7 @@ main h3 {
   color: #2980b9;
   text-decoration: none;
   font-weight: 600
+  
 }
 
 .project.highlight {
