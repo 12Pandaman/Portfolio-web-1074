@@ -18,9 +18,9 @@ main {
 
 /* === HEADER === */
 .site-header {
-  background: linear-gradient(135deg, #4facfe);
+  background: linear-gradient(135deg, #4facfe, #0e60ef);
   color: #fff;
-  padding: 30px 0;
+  padding: 20px 0; /* ปรับ Padding เล็กน้อย */
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
@@ -30,7 +30,7 @@ main {
 .site-header .header-inner {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 30px; /* ปรับ Padding ให้สอดคล้องกับ main */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,8 +64,8 @@ main {
   transform: translateY(-2px);
 }
 
-/* === NAME SECTION === */
-h1 {
+/* === NAME SECTION (index.html) === */
+h1.fullname {
   font-family: 'Poppins', sans-serif;
   font-size: 72px;
   font-weight: 800;
@@ -75,17 +75,16 @@ h1 {
 }
 
 .profile-card {
-  width: 100%;              /* เดิมอาจจะ 60% หรือ 70% — เพิ่มให้ใหญ่ขึ้น */
-  max-width: 800px;        /* ปรับจาก 600px → 800px เพื่อให้ขยายได้กว้างขึ้น */
-  padding:60px 100px;      /* เพิ่มพื้นที่ขอบในให้ดูโปร่งขึ้น */
+  width: 100%;
+  max-width: 800px;
+  padding: 60px 100px;
   background: #fff;
-  border-radius: 20px;     /* มุมโค้งนุ่มขึ้น */
+  border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin: 40px auto; 
+  margin: 40px auto;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box; /* เพิ่มเพื่อให้ padding ไม่ล้น */
 }
-
-
 
 .fullname {
   font-size: 48px;
@@ -95,7 +94,7 @@ h1 {
 }
 
 .nickname {
- font-size: 22px;
+  font-size: 22px;
   color: #666;
   margin-bottom: 20px;
   font-weight: 600;
@@ -104,7 +103,7 @@ h1 {
 .nickname span {
   color: #3498db;
   font-weight: 700;
-margin-right: 100px;
+  margin-right: 100px;
 }
 
 .university {
@@ -123,15 +122,19 @@ margin-right: 100px;
   border-radius: 2px;
 }
 
-.faculty, .major, .student-id {
+.faculty,
+.major,
+.student-id {
   font-size: 20px;
   font-weight: 700;
   color: #3498db;
   margin: 8px 0;
 }
 
-.faculty strong, .major strong, .student-id strong {
- font-size: 22px;
+.faculty strong,
+.major strong,
+.student-id strong {
+  font-size: 22px;
   color: #666;
   margin-bottom: 20px;
   font-weight: 600;
@@ -191,60 +194,7 @@ margin-right: 100px;
   text-align: center;
 }
 
-/* === BUTTONS === */
-.btn_next1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  padding: 14px 0;
-  border-radius: 50px;
-  width: 160px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.btn_next1:hover {
-  background: linear-gradient(135deg, #2980b9, #1f6391);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 52px;
-  }
-
-  .info-line {
-    gap: 15px;
-  }
-
-  .skills h2 {
-    font-size: 26px;
-  }
-
-  .skill-list li {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 500px) {
-  main {
-    padding: 30px 20px;
-  }
-
-  h1 {
-    font-size: 40px;
-  }
-}
-
-/* --- Other Page Styles (Retained from original CSS) --- */
+/* --- Other Page Styles (page02.html, project.html) --- */
 
 .container {
   max-width: 800px;
@@ -266,12 +216,12 @@ margin-right: 100px;
 }
 
 .profile img {
-
   height: 250px;
   width: 250px;
   object-fit: cover;
   border: 6px solid #3498db;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
 }
 
 .card {
@@ -293,12 +243,13 @@ margin-right: 100px;
   font-weight: 700;
   margin-bottom: 12px;
   color: #3498db;
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .card p {
   font-size: 16px;
-  margin: 8px 0;  font-family: 'Poppins', sans-serif;
+  margin: 8px 0;
+  font-family: 'Poppins', sans-serif;
   margin-left: 10px;
 }
 
@@ -310,75 +261,22 @@ margin-right: 100px;
 
 .card a:hover {
   text-decoration: underline;
-  
+
 }
 
 .card p b {
   display: inline-block;
   min-width: 90px;
   font-weight: 700;
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
+
 .card a {
   display: inline-block;
   min-width: 90px;
   font-weight: 700;
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-
-.btn-group {
-  text-align: center;
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.project-list,
-.project,
-.project * {
-  font-family: 'Poppins', sans-serif !important;
-}
-
-.project-list {
-  display: grid;
-  gap: 16px;
-  margin: 18px 0
-
-}
-
-.project {
-  background: #fff;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06)
-  
-}
-
-.project h2 {
-  margin: 0 0 8px 0
-}
-
-.project-link {
-  display: inline-block;
-  margin-top: 4px;
-  color: #2980b9;
-  text-decoration: none;
-  font-weight: 600
-  
-}
-
-.project.highlight {
-  background: linear-gradient(180deg, #f0fbff, #e6f7ff);
-  border: 2px solid #cfeefb;
-  box-shadow: 0 8px 20px rgba(11, 111, 181, 0.06);
-}
-
-.project.highlight h2 {
-  color: #0b6fb5;
-}
-
 
 .link-list {
   list-style: none;
@@ -412,73 +310,23 @@ margin-right: 100px;
   text-decoration: underline;
 }
 
-.btn_back1,
-.btn_next1,
-.btn_next2,
-.btn_next {
-  /* เพิ่ม .btn_next เพื่อให้ใช้สไตล์เดียวกัน */
-  display: inline-flex;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
 
-  /* บังคับให้มีขนาดเท่ากัน */
-  box-sizing: border-box;
-  width: 160px;
-  /* เพิ่มความกว้างจากเดิม 140px เป็น 160px ให้ดูดีขึ้น */
-  padding: 14px 0;
-  /* กำหนด padding แนวตั้งเท่านั้น */
-  align-items: center;
-  justify-content: center;
+/* === Projects (project.html) === */
+.project-list,
+.project,
+.project * {
+  font-family: 'Poppins', sans-serif !important;
 }
-
-
-.btn_back1:hover,
-.btn_next1:hover,
-.btn_next2:hover,
-.btn_next:hover {
-  background: linear-gradient(135deg, #2980b9, #1f6391);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
-
-.btn_back1:active,
-.btn_next1:active,
-.btn_next2:active,
-.btn_next:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-@media (max-width: 420px) {
-
-  .btn_back1,
-  .btn_next1,
-  .btn_next2,
-  .btn_next {
-    width: auto;
-    padding: 12px 24px;
-  }
-}
-
 
 .project-list {
   display: grid;
-  gap: 16px;
-  margin: 18px 0
+  gap: 24px; /* เพิ่มระยะห่าง */
+  margin: 18px 0;
 }
 
 .project {
   background: #fff;
-  padding: 16px;
+  padding: 24px; /* เพิ่ม Padding */
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   transition: transform .2s ease, box-shadow .2s ease;
@@ -511,7 +359,7 @@ margin-right: 100px;
   background: linear-gradient(180deg, #f0fbff, #e6f7ff);
   border: 2px solid #cfeefb;
   box-shadow: 0 8px 20px rgba(11, 111, 181, 0.06);
-  padding: 18px 16px;
+  padding: 18px 24px;
 }
 
 .project.highlight h2 {
@@ -520,7 +368,6 @@ margin-right: 100px;
   margin: 0;
 }
 
-/* Image Styling for Game Prototypes */
 .project-img {
   display: block;
   max-width: 100%;
@@ -530,7 +377,169 @@ margin-right: 100px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* P tag containing link and image to ensure proper spacing/flow */
 .project p {
   margin: 10px 0 20px 0;
+}
+
+
+/* === BUTTONS === */
+.btn-group {
+  text-align: center;
+  margin-top: 40px; /* เพิ่มระยะห่างด้านบน */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn_back1,
+.btn_next1,
+.btn_next {
+  display: inline-flex;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  width: 160px;
+  padding: 14px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.btn_back1:hover,
+.btn_next1:hover,
+.btn_next:hover {
+  background: linear-gradient(135deg, #2980b9, #1f6391);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+
+.btn_back1:active,
+.btn_next1:active,
+.btn_next:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* === RESPONSIVE DESIGN === */
+
+/* --- Tablet (หน้าจอขนาดกลาง) --- */
+@media (max-width: 768px) {
+  main {
+    padding: 40px 20px;
+  }
+  
+  /* Header */
+  .site-header .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Homepage */
+  h1.fullname {
+    font-size: 52px;
+  }
+  .profile-card {
+    padding: 40px 30px;
+  }
+  .fullname {
+    font-size: 38px;
+  }
+  .university {
+    font-size: 20px;
+  }
+  .faculty, .major, .student-id {
+    font-size: 18px;
+  }
+  
+  /* Skills */
+  .skills h2 {
+    font-size: 26px;
+  }
+  .skill-list li {
+    flex-direction: column;
+    align-items: flex-start; /* จัดชิดซ้าย */
+    gap: 10px;
+  }
+  
+  /* Profile Page */
+  .title {
+    font-size: 38px;
+  }
+  .profile img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* --- Mobile (หน้าจอขนาดเล็ก) --- */
+@media (max-width: 500px) {
+  main {
+    padding: 30px 15px;
+  }
+
+  /* Header */
+  .brand {
+    font-size: 22px;
+  }
+  .nav-link {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  /* Homepage */
+  h1.fullname {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .profile-card {
+    padding: 30px 20px;
+  }
+  .fullname {
+    font-size: 32px;
+  }
+  .nickname, .university {
+    font-size: 18px;
+  }
+  .faculty, .major, .student-id, .faculty strong, .major strong, .student-id strong {
+    font-size: 16px;
+  }
+
+  /* Profile Page */
+  .title {
+    font-size: 32px;
+  }
+  .profile img {
+    width: 150px;
+    height: 150px;
+  }
+  .card h2 {
+    font-size: 22px;
+  }
+  .card p, .link-list li {
+    font-size: 14px;
+  }
+  .link-list b, .card p b {
+    min-width: 80px;
+  }
+  
+  /* Buttons */
+  .btn-group {
+    flex-direction: column; /* ทำให้ปุ่มเรียงกันแนวตั้ง */
+    align-items: center;
+    gap: 15px;
+  }
+  .btn_back1, .btn_next1, .btn_next {
+    width: 100%; /* ทำให้ปุ่มเต็มความกว้าง */
+    max-width: 280px;
+  }
 }
